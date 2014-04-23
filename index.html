@@ -15,8 +15,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
-
+<!-- 		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+ -->
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
@@ -30,6 +30,7 @@
 				document.getElementsByTagName( 'head' )[0].appendChild( link );
 			}
 		</script>
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.6/d3.js"></script>
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -38,30 +39,178 @@
 
 	<body>
 
+		<style>
+		body{
+			font-family: Arial, Helvetica, sans-serif;
+		}
+		</style>
+
+
 		<div class="reveal">
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
+					<h1>D3 and Financial Organizations</h1>
+				</section>
+				<section>
+					<h1>Our task:</h1>
+					<h2>Provide an expandable set graphs for large data set.</h2>
+				</section>
+				<section>
+					<h1>The Requirments?</h1>
+					<div>
+						<ol>
+							<li>The basics chars: bar line, pie.</li>
+							<li>Custome ledgends, labels and units (years/quarters ... tranches/Risk Numerals)</li>
+							<li>Scaling and sizing for different form factors</li>
+							<li>Different data resolutions for differetn graph sizes</li>
+							<li>Different data resolutions for differetn graph sizes</li>
+						</ol>
+					</div>
+				</section>
+				<section>
+					<h1>The Requirments?</h1>
+					<div>
+						<ol>
+							<li>The basics chars: bar line, pie.</li>
+							<li>Custome ledgends, labels and units (years/quarters ... tranches/Risk Numerals)</li>
+							<li>Scaling and sizing for different form factors</li>
+							<li>Different data resolutions for differetn graph sizes</li>
+							<li>Different data resolutions for differetn graph sizes</li>
+						</ol>
+					</div>
+				</section>
+				<section>
+					<h1>Options?</h1>
+					<div>
+						<ol>
+							<li class="chartbasic">Highcharts</li>
+							<li class="chartbasic">Google charts</li>
+							<li class="chartbasic">Chart.js</li>
+
+							<li class="timeseries">Rickshaw</li>
+							<li class="timeseries">dygraphs</li>
+
+							<li class="chartinteractions">Canvas.js</li>
+							<li class="chartinteractions">gRaphael</li>
+
+							<li class="chartdyi">d3.js</li>
+							<li class="chartdyi">Raphael.js</li>
+						</ol>
+						<ol>
+							<li class="chartbasic">Basic</li>
+							<li class="timeseries">Time Series</li>
+							<li class="chartinteractions">Interaction Specific</li>
+							<li class="chartinteractions">Scafold</li>
+						</ol>
+						<style>
+						.chartbasic{
+							color:red;
+
+						}
+						.timeseries{
+							color:green;
+							
+						}
+						.chartdyi{
+							color:blue;
+						}
+						.chartinteractions{
+							color:purple;
+						}
+						</style>
+					</div>
+				</section>			
+				<section>
+					<h2>We Choose D3</h2>
 					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
+						JavaScript Library for DOM manipulation based on Data. (Data Driven Documents).
 					</p>
 				</section>
 
 				<section>
-					<h2>Heads Up</h2>
+					<h2>What do we need to build?</h2>
 					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
+					<ol>
+						<li>It needs to play nice with an MVC</li>
+						<li>Tablet and Mobile</li>
+						<li>New visulaization would be added to the platform</li>
+						<li>New data types will need to visualized?</li>
+					</ol>
 					</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
 				</section>
 
+				<section>
+					<h2>What charateristics would an ideal library have</h2>
+					<p>
+					<ol>
+						<li>Simple to get started with lots of examples</li>
+						<li>Open source and maintained by an active community</li>
+						<li>3rd party lib and extensions.</li>
+					</ol>
+					</p>
+				</section>
+
+				<section>
+					<h2>Why is D3 sopopular ...?</h2>
+					<p>
+					<i>All the cool kids are doing it. Duh!  -Brian (Presence Developer)</i>
+					<i>Because our user's expect slick sexy graphs... we need -The Customer</i>
+					<b>An Amazing Consensus!</b>
+					</p>
+				</section>
+
+				<section>
+					<h2>Let's make a chart!</h2>
+					<div id="piegraph">
+					 <style>
+					 #piegraph{
+					 	margin-top:200px;
+					 }
+					 #piegraph div {
+						  font: 10px sans-serif;
+						  background-color: steelblue;
+						  text-align: right;
+						  padding: 3px;
+						  margin: 1px;
+						  color: white;
+						}
+					 </style>
+				</section>
+				<section>
+					<h2>Step 1: Organizing the view</h2>
+					<ol>
+						<li> Padding and Labeling </li>
+						<i>Padding example goes here</i>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Step 2: Scaleing and fitting data</h2>
+					<i>Scaleing examples go here.</i>
+				</section>
+
+				<section>
+					<h2>Step 3: Colors!</h2>
+					<i>Adding Color to graph and ledgends</i>
+				</section>
+
+				<section>
+					<h2>Step 4: Adding a second line for comparison.</h2>
+					<i>Second data item code and live example</i>
+				</section>
+
+				<section>
+					<h2>Step 5: Resizing the graph.</h2>
+					<i>resizing code</i>
+				</section>
+
+				<section>
+					<h2>Step 5: Resizing the graph.</h2>
+					<i>resizing code</i>
+				</section>
+				
 
 			</div>
 
@@ -102,3 +251,26 @@
 
 	</body>
 </html>
+
+<script>
+/**
+* A bar chart. Required data format:
+* [ { name : x-axis-bar-label, value : N }, ...]
+* Sample use:
+*/  
+
+var data = [4, 8, 15, 16, 23, 42];
+
+var x = d3.scale.linear()
+    .domain([0, d3.max(data)])
+    .range([0, 420]);
+
+d3.select("#piegraph")
+  .selectAll("div")
+    .data(data)
+  .enter().append("div")
+    .style("width", function(d) { return x(d) + "px"; })
+    .text(function(d) { return d; });
+
+
+</script>
